@@ -1,0 +1,108 @@
+#search-main {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .red {
+        border: 1px solid red;
+    }
+
+    #input-button-div {
+        position: relative;
+        width: 100%;
+        background-color: white;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 4px;
+
+        #input {
+            all: unset;
+            width: calc(100% - 48px - 14px - 4px);
+            font-weight: var(--bold);
+        }
+
+        #button {
+            all: unset;
+            cursor: pointer;
+            position: absolute;
+            bottom: calc(50% - 16px);
+            right: 14px;
+            height: 24px;
+            width: 48px;
+            padding: 4px;
+            color: var(--button-text);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        #button.button-offline {
+            background-color: var(--text-grey);
+            color: white;
+        }
+
+        #button.button-offline:hover::after {
+            content: 'You have gone offline';
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: max-content;
+            color: black;
+            font-size: 1.5rem;
+            font-weight: var(--bold);
+        }
+
+        #button.button-online {
+            background-color: var(--green);
+        }
+
+        #search-error {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            font-size: 1.25rem;
+            font-weight: var(--bold);
+            color: black;
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    #search-main {
+        width: 100%;
+        height: auto;
+
+        #search-lower {
+            >h4 {
+                font-size: 1.5rem;
+            }
+        }
+
+        #input-button-div {
+            width: 100%;
+            font-size: 1.25rem;
+
+            #search-error {
+                font-size: 0.7em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #search-main {
+
+        >h1 {
+            text-align: center;
+        }
+
+        #search-lower {
+            padding: 8px;
+
+            #input-button-div {
+                width: 100%;
+            }
+        }
+    }
+}
